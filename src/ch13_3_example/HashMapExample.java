@@ -37,13 +37,13 @@ public class HashMapExample {
 		
 		//1. Set<Key> 이용
 		Set<String> keySet = map.keySet();
-		Iterator<String> keyIterator = keySet.iterator();
+		Iterator<String> keyIterator = keySet.iterator(); //불러오는거
 		while(keyIterator.hasNext()) {
 			String key = keyIterator.next();
 			Integer value =map.get(key);
 			System.out.println("\t"+ key + ":"+ value);
 		}
-		keyIterator= keySet.iterator();
+		keyIterator= keySet.iterator();   //초기화해주는 습관 가지기.
 		System.out.println();
 		
 		
@@ -51,9 +51,10 @@ public class HashMapExample {
 		map.remove("신크루");
 		System.out.println("총 entry 수 :"+ map.size());
 		
-		//객체를 하나씩 처리
+		//2. Set<Map.Entry> 사용
 		Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
 		Iterator<Map.Entry<String, Integer>> entryIterator =entrySet.iterator();
+		
 		
 		while(entryIterator.hasNext()) {
 			Map.Entry<String, Integer> entry =entryIterator.next();
@@ -61,6 +62,7 @@ public class HashMapExample {
 			Integer value =entry.getValue();
 			System.out.println("\t"+ key+":"+value);
 		}
+		entryIterator=entrySet.iterator();
 		System.out.println();
 		
 		
