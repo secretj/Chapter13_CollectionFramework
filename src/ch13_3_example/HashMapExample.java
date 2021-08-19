@@ -35,7 +35,7 @@ public class HashMapExample {
 		System.out.println(map);
 		
 		
-		//객체를 하나씩 처리
+		//1. Set<Key> 이용
 		Set<String> keySet = map.keySet();
 		Iterator<String> keyIterator = keySet.iterator();
 		while(keyIterator.hasNext()) {
@@ -43,6 +43,7 @@ public class HashMapExample {
 			Integer value =map.get(key);
 			System.out.println("\t"+ key + ":"+ value);
 		}
+		keyIterator= keySet.iterator();
 		System.out.println();
 		
 		
